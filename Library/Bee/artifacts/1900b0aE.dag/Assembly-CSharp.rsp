@@ -387,7 +387,10 @@
 "Assets/Scripts/hipvals.cs"
 "Assets/Scripts/kneevals.cs"
 "Assets/Scripts/leg.cs"
+"Assets/Scripts/OptionsButton.cs"
 "Assets/Scripts/OrbitalCamera.cs"
+"Assets/Scripts/PlaybackButton.cs"
+"Assets/Scripts/RecordingButton.cs"
 "Assets/Scripts/TCP.cs"
 -langversion:9.0
 /deterministic
