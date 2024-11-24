@@ -391,6 +391,7 @@
 "Assets/Scripts/OrbitalCamera.cs"
 "Assets/Scripts/PlaybackButton.cs"
 "Assets/Scripts/RecordingButton.cs"
+"Assets/Scripts/ResetCameraButton.cs"
 "Assets/Scripts/TCP.cs"
 -langversion:9.0
 /deterministic

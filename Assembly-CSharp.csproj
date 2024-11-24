@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\anklevals.cs" />
     <Compile Include="Assets\Scripts\hipvals.cs" />
     <Compile Include="Assets\Scripts\OrbitalCamera.cs" />
+    <Compile Include="Assets\Scripts\ResetCameraButton.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\TCP.cs" />
   </ItemGroup>
