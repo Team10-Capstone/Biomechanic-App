@@ -64,12 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CircularPath.cs" />
-    <Compile Include="Assets\Scripts\kneevals.cs" />
+    <Compile Include="Assets\Scripts\LKne.cs" />
     <Compile Include="Assets\Scripts\leg.cs" />
-    <Compile Include="Assets\Scripts\anklevals.cs" />
-    <Compile Include="Assets\Scripts\hipvals.cs" />
+    <Compile Include="Assets\Scripts\LHip.cs" />
+    <Compile Include="Assets\Scripts\RKne.cs" />
+    <Compile Include="Assets\Scripts\RAnk.cs" />
+    <Compile Include="Assets\Scripts\LAnk.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\TCP.cs" />
+    <Compile Include="Assets\Scripts\RHip.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

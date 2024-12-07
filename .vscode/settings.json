@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Digital Twin.sln"
+    "dotnet.defaultSolution": "Biomechanic-App.sln"
 }

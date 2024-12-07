@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SphereMover : MonoBehaviour
 {
-    public string data_04;
-    private List<Vector3> positions;
+    public string data_04; // Name of the CSV file (without the extension)
+    private List<Vector3> positions; // List to hold positions read from the CSV
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class SphereMover : MonoBehaviour
 
     void ReadCSV()
     {
-        TextAsset csvFile = Resources.Load<TextAsset>(data_04); 
+        TextAsset csvFile = Resources.Load<TextAsset>(data_04); // Use test2 instead of csvFileName
         if (csvFile == null)
         {
             Debug.LogError("CSV file not found in Resources folder");
@@ -23,12 +23,12 @@ public class SphereMover : MonoBehaviour
 
         string[] csvLines = csvFile.text.Split('\n');
 
-        for (int i = 0; i < csvLines.Length; i++) 
+        for (int i = 0; i < csvLines.Length; i++) // Process each line
         {
             string[] values = csvLines[i].Split(',');
 
             // Check if the line starts with "Ank"
-            if (values.Length == 4 && values[0].Trim() == "Ank" && 
+            if (values.Length == 4 && values[0].Trim() == "LAnk" && 
                 float.TryParse(values[1], out float x) && 
                 float.TryParse(values[2], out float y) && 
                 float.TryParse(values[3], out float z))
@@ -41,6 +41,7 @@ public class SphereMover : MonoBehaviour
 
     void Update()
     {
+        // Example: Move the sphere to each position over time
         if (positions.Count > 0)
         {
             transform.position = Vector3.MoveTowards(transform.position, positions[0], Time.deltaTime * 5);
