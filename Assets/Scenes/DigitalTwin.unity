@@ -1440,7 +1440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1545960955}
-  cameraTransform: {fileID: 1328839959}
+  cameraAnchor: {fileID: 1258158381}
+  mouseOrbitCamera: {fileID: 1328839962}
 --- !u!1 &1258158376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,8 +1776,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraAnchor: {fileID: 1258158381}
-  rotationSpeed: 50
-  verticalClampAngle: 80
+  rotationSpeed: 100
+  upperVerticalClampAngle: 30
+  lowerVerticalClampAngle: 10
 --- !u!1001 &1370345162
 PrefabInstance:
   m_ObjectHideFlags: 0
