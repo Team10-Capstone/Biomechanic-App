@@ -621,8 +621,9 @@ GameObject:
   - component: {fileID: 725103622}
   - component: {fileID: 725103621}
   - component: {fileID: 725103625}
+  - component: {fileID: 725103626}
   m_Layer: 0
-  m_Name: LHip
+  m_Name: RHip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -727,8 +728,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac829ace33b00a9408a3e6a27abceba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data_05: data_06
-  speed: 5
+--- !u!114 &725103626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725103619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b580bc0b87ede64a9543a2f82f7c9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data_05: Right
+  speed: 2.5
 --- !u!1 &897252513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,8 +1046,9 @@ GameObject:
   - component: {fileID: 1258158379}
   - component: {fileID: 1258158378}
   - component: {fileID: 1258158382}
+  - component: {fileID: 1258158383}
   m_Layer: 0
-  m_Name: kneeeeeee
+  m_Name: RKne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1140,8 +1154,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757fb3d2a73dca349904a80390460985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data_05: data_06
-  speed: 1.19
+--- !u!114 &1258158383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258158376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88521c447efc64b45a7593563b8375c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data_05: Right
+  speed: 2.5
 --- !u!1 &1328839958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,8 +1290,9 @@ GameObject:
   - component: {fileID: 1496225076}
   - component: {fileID: 1496225075}
   - component: {fileID: 1496225079}
+  - component: {fileID: 1496225080}
   m_Layer: 0
-  m_Name: LAnk
+  m_Name: RAnk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1369,7 +1396,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8a2adb888cdfd41a2df4e10d55b957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data_04: data_06
+--- !u!114 &1496225080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496225073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b320661ea0248b48be665edf2a24359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data_04: Right
 --- !u!1 &1540194483
 GameObject:
   m_ObjectHideFlags: 0
