@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PostProcessing Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 6109382892955297462}
---- !u!114 &6109382892955297462
+  - {fileID: 4441494753373562951}
+--- !u!114 &4441494753373562951
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31,14 +31,14 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   focusDistance:
-    overrideState: 0
-    value: 10
+    overrideState: 1
+    value: 0.1
   aperture:
-    overrideState: 0
+    overrideState: 1
     value: 5.6
   focalLength:
-    overrideState: 0
+    overrideState: 1
     value: 50
   kernelSize:
-    overrideState: 0
+    overrideState: 1
     value: 1
