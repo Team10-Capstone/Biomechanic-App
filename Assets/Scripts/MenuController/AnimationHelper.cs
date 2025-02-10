@@ -67,6 +67,24 @@ public class AnimationHelper
         OnEnd?.Invoke();
     }
 
+    public static IEnumerator PopIn(CanvasGroup CanvasGroup, float Speed, UnityEvent OnEnd)
+    {
+        CanvasGroup.blocksRaycasts = true;
+        CanvasGroup.interactable = true;
+        yield return null;
+        CanvasGroup.alpha = 1;
+        OnEnd?.Invoke();
+    }
+
+    public static IEnumerator PopOut(CanvasGroup CanvasGroup, float Speed, UnityEvent OnEnd)
+    {
+        CanvasGroup.blocksRaycasts = false;
+        CanvasGroup.interactable = false;
+        yield return null;
+        CanvasGroup.alpha = 0;
+        OnEnd?.Invoke();
+    }
+
     public static IEnumerator SlideIn(RectTransform Transform, Direction Direction, float Speed, UnityEvent OnEnd)
     {
         Vector2 startPosition;

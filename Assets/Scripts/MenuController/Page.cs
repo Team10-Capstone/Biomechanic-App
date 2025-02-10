@@ -13,6 +13,7 @@ public class Page : MonoBehaviour
     [SerializeField]
     private float AnimationSpeed = 1f;
     public bool ExitOnNewPagePush = false;
+    public bool isSpecial = false;
     [SerializeField]
     private AudioClip EntryClip;
     [SerializeField]
@@ -64,6 +65,9 @@ public class Page : MonoBehaviour
             case EntryMode.FADE:
                 FadeIn(PlayAudio);
                 break;
+            case EntryMode.POPIN:
+                PopIn(PlayAudio);
+                break;
         }
     }
 
@@ -82,8 +86,12 @@ public class Page : MonoBehaviour
             case EntryMode.FADE:
                 FadeOut(PlayAudio);
                 break;
+            case EntryMode.POPIN:
+                PopOut(PlayAudio);
+                break;
         }
     }
+
 
     private void SlideIn(bool PlayAudio)
     {
@@ -147,6 +155,28 @@ public class Page : MonoBehaviour
             StopCoroutine(AnimationCoroutine);
         }
         AnimationCoroutine = StartCoroutine(AnimationHelper.FadeOut(CanvasGroup, AnimationSpeed, PostPopAction));
+
+        PlayExitClip(PlayAudio);
+    }
+
+    private void PopIn(bool PlayAudio)
+    {
+        if (AnimationCoroutine != null)
+        {
+            StopCoroutine(AnimationCoroutine);
+        }
+        AnimationCoroutine = StartCoroutine(AnimationHelper.PopIn(CanvasGroup, AnimationSpeed, PostPushAction));
+
+        PlayEntryClip(PlayAudio);
+    }
+
+    private void PopOut(bool PlayAudio)
+    {
+        if (AnimationCoroutine != null)
+        {
+            StopCoroutine(AnimationCoroutine);
+        }
+        AnimationCoroutine = StartCoroutine(AnimationHelper.PopOut(CanvasGroup, AnimationSpeed, PostPopAction));
 
         PlayExitClip(PlayAudio);
     }

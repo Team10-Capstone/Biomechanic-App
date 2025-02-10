@@ -11,7 +11,7 @@ public class MenuController : MonoBehaviour
     private Page InitialPage;
     [SerializeField]
     private GameObject FirstFocusItem;
-
+    [SerializeField]
     private Canvas RootCanvas;
 
     private Stack<Page> PageStack = new Stack<Page>();
@@ -74,6 +74,35 @@ public class MenuController : MonoBehaviour
 
     public void PopPage()
     {
+        if (PageStack.Peek().isSpecial)
+        {
+            Debug.LogWarning("SpecialPage can only be popped on specific instances");
+            return;
+        }
+        if (PageStack.Count > 1)
+        {
+            Page page = PageStack.Pop();
+            page.Exit(true);
+
+            Page newCurrentPage = PageStack.Peek();
+            if (newCurrentPage.ExitOnNewPagePush)
+            {
+                newCurrentPage.Enter(false);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Trying to pop a page but only 1 page remains in the stack!");
+        }
+    }
+
+    public void PopSpecialPage()//used to pop base UI elements that should not be popped otherwise. Used to "change scenes."
+    {
+        if (!PageStack.Peek().isSpecial)
+        {
+            Debug.LogWarning("Only the special page can be popped with this function!");
+            return;
+        }
         if (PageStack.Count > 1)
         {
             Page page = PageStack.Pop();
