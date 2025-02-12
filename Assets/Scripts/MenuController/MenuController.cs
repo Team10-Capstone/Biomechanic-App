@@ -40,7 +40,7 @@ public class MenuController : MonoBehaviour
         {
             if (PageStack.Count != 0)
             {
-                PopPage();
+                PopSpecialPage();
             }
         }
     }
@@ -74,9 +74,9 @@ public class MenuController : MonoBehaviour
 
     public void PopPage()
     {
-        if (PageStack.Peek().isSpecial)
+        if (PageStack.Peek().isSpecial || PageStack.Peek().isPrimary)
         {
-            Debug.LogWarning("SpecialPage can only be popped on specific instances");
+            Debug.LogWarning("SpecialPages and primary pages can only be popped with their respecive function calls!");
             return;
         }
         if (PageStack.Count > 1)
@@ -98,9 +98,33 @@ public class MenuController : MonoBehaviour
 
     public void PopSpecialPage()//used to pop base UI elements that should not be popped otherwise. Used to "change scenes."
     {
-        if (!PageStack.Peek().isSpecial)
+        if (PageStack.Peek().isPrimary)
         {
-            Debug.LogWarning("Only the special page can be popped with this function!");
+            Debug.LogWarning("PrimaryPage can only be popped with its respective function call!");
+            return;
+        }
+        if (PageStack.Count > 1)
+        {
+            Page page = PageStack.Pop();
+            page.Exit(true);
+
+            Page newCurrentPage = PageStack.Peek();
+            if (newCurrentPage.ExitOnNewPagePush)
+            {
+                newCurrentPage.Enter(false);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Trying to pop a page but only 1 page remains in the stack!");
+        }
+    }
+
+    public void PopPrimaryPage()//used to pop base UI elements that should not be popped otherwise. Used to "change scenes."
+    {
+        if (!PageStack.Peek().isPrimary)
+        {
+            Debug.LogWarning("Only the Primary page can be popped with this function!");
             return;
         }
         if (PageStack.Count > 1)

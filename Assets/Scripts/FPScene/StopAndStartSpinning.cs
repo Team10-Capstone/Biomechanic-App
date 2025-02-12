@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-
+//TODO: FIX THIS SHIT
 public class StopAndStartSpinning : MonoBehaviour
 {
     [SerializeField]
@@ -15,11 +15,13 @@ public class StopAndStartSpinning : MonoBehaviour
 
     public void StartSpin()
     {
+        Model.GetComponent<RotateToPoint>().enabled = false;
         Model.GetComponent<RotateConstantly>().enabled = true;
     }
     public void StopSpin()
     {
         Model.GetComponent<RotateConstantly>().enabled = false;
-        Model.GetComponent<Transform>().SetPositionAndRotation(setPosition, setRotation);
+        Model.GetComponent<RotateToPoint>().enabled = true;
+        //Model.GetComponent<Transform>().SetPositionAndRotation(setPosition, setRotation);
     }
 }

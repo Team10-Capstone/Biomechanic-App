@@ -13,7 +13,10 @@ public class Page : MonoBehaviour
     [SerializeField]
     private float AnimationSpeed = 1f;
     public bool ExitOnNewPagePush = false;
-    public bool isSpecial = false;
+    
+    public bool isPrimary = false; //Primary Pages (basically just the Forkpanel Page) can only be popped when the popPrimaryPage() function is called.
+    public bool isSpecial = false; //Special Pages (such as the playbackPanel page) can only be popped when the popSpecialPage() is called OR when backspace is hit.
+
     [SerializeField]
     private AudioClip EntryClip;
     [SerializeField]

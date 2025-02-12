@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class AnimationHelper
 {
@@ -101,7 +102,7 @@ public class AnimationHelper
                 startPosition = new Vector2(0, Screen.height);
                 break;
             case Direction.LEFT:
-                startPosition = new Vector2(1003, 0);
+                startPosition = new Vector2(Transform.anchoredPosition.x, 0);
                 break;
             default:
                 startPosition = new Vector2(0, -Screen.height);
@@ -129,7 +130,7 @@ public class AnimationHelper
                 endPosition = new Vector2(0, Screen.height);
                 break;
             case Direction.RIGHT:
-                endPosition = new Vector2(1003, 0);
+                endPosition = new Vector2(Transform.anchoredPosition.x + (Transform.rect.width - Transform.anchoredPosition.x), 0);
                 break;
             case Direction.DOWN:
                 endPosition = new Vector2(0, -Screen.height);

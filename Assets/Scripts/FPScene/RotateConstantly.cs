@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RotateConstantly : MonoBehaviour
 {
-    
+    [SerializeField] private Vector3 _rotation;
     void Update()
     {
-        transform.Rotate(0, 0, 0.05f);
+        transform.Rotate(_rotation * Time.deltaTime);
     }
 }

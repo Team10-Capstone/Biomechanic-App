@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class DisableSelf : MonoBehaviour
 {
-    public Button buttonToChange;
+    public GameObject buttonToChange;
 
     public void EnableButton()
     {
-        buttonToChange.enabled = true;
+        buttonToChange.SetActive(true);
     }
     public void DisableButton()
     {
-        buttonToChange.enabled = false;
+        buttonToChange.SetActive(false);
     }
 }
