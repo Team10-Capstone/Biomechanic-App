@@ -44,7 +44,7 @@ Material:
     - _BUILTIN_ZWriteControl: 0
     - _Fuzziness: 7
     - _Range: 0.09
-    - _Tilingx: 200
+    - _Tilingx: 100
     m_Colors:
     - _Mask_color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
