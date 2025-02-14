@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class OnStartup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 165;
     }
 
 }

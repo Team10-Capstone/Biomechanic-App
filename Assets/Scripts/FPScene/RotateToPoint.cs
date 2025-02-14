@@ -5,21 +5,28 @@ using UnityEngine;
 
 public class RotateToPoint : MonoBehaviour
 {
-    [SerializeField]
-    private float rotationSpeed;
-    [SerializeField] 
-    private Vector3 rotationDirection;
+    [SerializeField] private Transform current;
+    [SerializeField] private float rotationSpeed = 90f; //desgrees per second
+    [SerializeField] private Quaternion goal;
+    private bool shouldRotate = false;
 
-    [SerializeField]
-    private Quaternion goal;
-    [SerializeField]
-    private Transform current;
+
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        while(current.rotation != goal)
+        if (shouldRotate)
         {
-            transform.Rotate(rotationDirection * rotationSpeed * Time.deltaTime);
+            current.rotation = Quaternion.RotateTowards(current.rotation, goal, rotationSpeed * Time.deltaTime);
+
+            //stops rotating
+            if (Quaternion.Angle(current.rotation, goal) < 0.1f)
+            {
+                shouldRotate = false;
+            }
         }
+    }
+    public void StartRotation()
+    {
+        shouldRotate = true;
     }
 }
