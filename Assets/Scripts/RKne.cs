@@ -56,7 +56,7 @@ public class KneeMove : MonoBehaviour
             if (Vector3.Distance(transform.position, positions[0]) < 0.1f)
             {
                 Debug.Log("Reached Position: " + positions[0]);
-                positions.RemoveAt(0); //hello
+                positions.RemoveAt(0); 
             }
         }
     }
