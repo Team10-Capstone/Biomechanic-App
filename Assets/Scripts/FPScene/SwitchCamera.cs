@@ -14,12 +14,12 @@ public class SwitchCamera : MonoBehaviour
 
     void Update()
     {
-        if (cam == null)
+        if (cam == null)//not needed anymore but I thought it was funny
         {
             Debug.LogError("ugh");
         }
-
-        if (Vector3.Distance(objectToCheck.position, target) < threshold) //
+        //Causes the freelook cam to ovveride the priority of the main/dolly camera, so long as the dolly is within range of the freelook camera position.
+        if (Vector3.Distance(objectToCheck.position, target) < threshold) 
         {
             cam.Priority.Value = 2;
         }

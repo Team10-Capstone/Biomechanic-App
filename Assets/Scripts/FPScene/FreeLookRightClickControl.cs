@@ -16,7 +16,7 @@ public class FreeLookRightClickControl : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButton(1) && cam.Priority.Value > 1) //  && cam.Priority.Value > 1
+        if (Mouse.current.rightButton.isPressed && cam.Priority.Value > 1) //  && cam.Priority.Value > 1
         {
             cineCam.enabled = true;
         }

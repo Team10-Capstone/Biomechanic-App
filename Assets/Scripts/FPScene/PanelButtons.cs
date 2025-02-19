@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIController : MonoBehaviour
+public class UIController : MonoBehaviour// OBSOLETE OBJECT: DO NOT USE
 {
     public GameObject forkPanel;       // Panel with the user profile button
     public GameObject userProfilePanel; // Panel for the user profile
