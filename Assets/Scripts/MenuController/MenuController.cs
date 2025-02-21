@@ -44,12 +44,11 @@ public class MenuController : MonoBehaviour
             }
         }
     }
-
-    private void OnSubmit()
+    /*private void OnSpace()
     {
-
+        Debug.Log("hello");
     }
-
+    */
     public bool IsPageInStack(Page Page)
     {
         return PageStack.Contains(Page);

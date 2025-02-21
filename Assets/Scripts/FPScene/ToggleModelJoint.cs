@@ -100,7 +100,6 @@ public class ToggleModelJoint : MonoBehaviour
             {
                 toggleToFocus = toggles[0];
             }
-            Debug.Log(toggleToFocus);
             toggleToFocus.isOn = true;
         }
     }
@@ -157,7 +156,6 @@ public class ToggleModelJoint : MonoBehaviour
             }
             toggleToFocus = toggles[0]; //toggle to focus is the left hip
             startCentering(new Vector3(600, 116.66f, 40));
-            Debug.Log(toggleToFocus);
         }
         else if (toggleSections[1].isOn)//for knee
         {
@@ -176,7 +174,6 @@ public class ToggleModelJoint : MonoBehaviour
             }
             toggleToFocus = toggles[2]; //toggle to focus is the left knee
             startCentering(new Vector3(600, 70, 40));
-            Debug.Log(toggleToFocus);
 
         }
         else if (toggleSections[2].isOn)//for ankle
@@ -194,7 +191,6 @@ public class ToggleModelJoint : MonoBehaviour
                 }
             }
             startCentering(new Vector3(600, 46.66f, 40));
-            Debug.Log(toggleToFocus);
 
         }
     }

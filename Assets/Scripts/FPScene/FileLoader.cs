@@ -13,30 +13,112 @@ public class FileLoader : MonoBehaviour
     [SerializeField] private Slider progressBar;
     [SerializeField] private TMP_Text ProgressAt;
     [SerializeField] private TMP_Text fileName;
+    [SerializeField] private Toggle playToggle;
+
+    private float updateIntervalSpeed = 100f;
+    private float progress = 0f;
+    private float updateInterval = 1f/100f;
 
     private int rowCount;
-    private string path = "";
     void Update()
     {
+
+        if (playToggle.isOn)
+        {
+            progress += Time.deltaTime;
+            while (progress >= updateInterval)
+            {
+                progressBar.value++;
+                progress -= updateInterval;
+            }
+        }
         if (rowCount != 0)
         {
+            progressBar.gameObject.SetActive(true);
             ProgressAt.text = progressBar.value.ToString() + "/" + rowCount;
         }
         else
         {
+            progressBar.gameObject.SetActive(false);
             ProgressAt.text = "";
+        }
+        if (progressBar.value == progressBar.maxValue)
+        {
+            PauseFile();
         }
     }
     public void LoadFile(string mainPath, string fileToOpen, string fileFullname)
     {
-        DirectoryInfo dir = new DirectoryInfo(mainPath);
+        //DirectoryInfo dir = new DirectoryInfo(mainPath);
 
 
         fileName.text = fileToOpen;
         rowCount = File.ReadAllLines(fileFullname).Length;
 
         progressBar.maxValue = rowCount;
+        progressBar.value = 0;
 
         ProgressAt.text = progressBar.value.ToString() + "/" + rowCount;
+    }
+    public void EnableProgressBar()
+    {
+        progressBar.enabled = true;
+    }
+    public void DisableProgressBar()
+    {
+        progressBar.enabled = false;
+    }
+    public void PlayFile()
+    {
+        if (progressBar.value == progressBar.maxValue)
+        {
+            progressBar.value = 0;
+        }
+        playToggle.isOn = true;
+    }
+    public void PauseFile()
+    {
+        playToggle.isOn = false;
+    }
+
+    public void togglePlayButton()
+    {
+        if (!progressBar.enabled) return;
+        if (playToggle.isOn)
+        {
+            PauseFile();
+        }
+        else
+        {
+            PlayFile();
+        }
+    }
+
+    public void LowerPlayBackSpeed()
+    {
+        if (updateIntervalSpeed > 10f)
+        {
+            updateIntervalSpeed -= 10f;
+        }
+        updateInterval = 1 / updateIntervalSpeed;
+    }
+
+    public void RaisePlayBackSpeed()
+    {
+        if (updateIntervalSpeed <= 200f)
+        {
+            updateIntervalSpeed += 10f;
+        }
+        updateInterval = 1 / updateIntervalSpeed;
+    }
+
+    public void GoBack()
+    {
+        progressBar.value -= 25f;
+    }
+
+    public void GoForward()
+    {
+        progressBar.value += 25f;
     }
 }

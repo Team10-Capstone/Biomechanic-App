@@ -86,6 +86,7 @@ public class FileManager : MonoBehaviour
                 buttonComponent.onClick.AddListener(disableFocus.DisableFocusMode);
                 buttonComponent.onClick.AddListener(disableFocus.TurnOffSectionToggle);
                 buttonComponent.onClick.AddListener(() => fileLoader.LoadFile(mainPath, file.Name, file.FullName));
+                buttonComponent.onClick.AddListener(fileLoader.PauseFile);
             }
         }
     }
