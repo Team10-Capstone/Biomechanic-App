@@ -74,7 +74,7 @@
                     "id": "958fd31a-f1a7-4581-92b0-9758b0551b79",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -83,7 +83,7 @@
                     "id": "79767077-c5ac-485d-88a8-894e8fd3cb73",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -105,9 +105,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ToggleAnkleJoints",
+                    "name": "ToggleHipJoints",
                     "type": "Button",
-                    "id": "04b24f8e-c9f2-42f3-8b3a-e02fa502f68d",
+                    "id": "5e42f62c-6611-4cee-923c-1967103c80c5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -123,9 +123,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ToggleHipJoints",
+                    "name": "ToggleAnkleJoints",
                     "type": "Button",
-                    "id": "5e42f62c-6611-4cee-923c-1967103c80c5",
+                    "id": "04b24f8e-c9f2-42f3-8b3a-e02fa502f68d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -180,6 +180,15 @@
                     "name": "Six",
                     "type": "Button",
                     "id": "77324abd-a82a-4ce5-af14-c81f3d8c0dd4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "OpenRecordings",
+                    "type": "Button",
+                    "id": "57dd91a7-111e-4c31-88ae-14952a32f66b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -388,33 +397,11 @@
                 {
                     "name": "",
                     "id": "5d8eddf9-1d43-4a73-b7ae-1f7b55d27021",
-                    "path": "<Keyboard>/z",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleHipJoints",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9212b653-edbd-484d-a9ec-4537b1a606b3",
-                    "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleKneeJoints",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2e21e5df-f493-4805-9b4b-e84a0788ecae",
                     "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ToggleAnkleJoints",
+                    "action": "ToggleHipJoints",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -503,6 +490,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "ResetCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e21e5df-f493-4805-9b4b-e84a0788ecae",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleAnkleJoints",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9212b653-edbd-484d-a9ec-4537b1a606b3",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleKneeJoints",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1872e663-b32b-4125-aba2-90be8590e4dd",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenRecordings",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

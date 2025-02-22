@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ChangePlayBackSpeed : MonoBehaviour
@@ -29,23 +30,22 @@ public class ChangePlayBackSpeed : MonoBehaviour
             fileLoader.LowerPlayBackSpeed();
         }
     }
-
     private void OnLeft()
     {
+        GameObject buttonControllerObject = GameObject.Find("ButtonController");//buttoncontroller
+        FileLoader fileLoader = buttonControllerObject.GetComponent<FileLoader>();
         if (progressBar.gameObject.activeSelf)
         {
-            GameObject buttonControllerObject = GameObject.Find("ButtonController");//buttoncontroller
-            FileLoader fileLoader = buttonControllerObject.GetComponent<FileLoader>();
             fileLoader.GoBack();
         }
     }
 
     private void OnRight()
     {
+        GameObject buttonControllerObject = GameObject.Find("ButtonController");//buttoncontroller
+        FileLoader fileLoader = buttonControllerObject.GetComponent<FileLoader>();
         if (progressBar.gameObject.activeSelf)
         {
-            GameObject buttonControllerObject = GameObject.Find("ButtonController");//buttoncontroller
-            FileLoader fileLoader = buttonControllerObject.GetComponent<FileLoader>();
             fileLoader.GoForward();
         }
     }
