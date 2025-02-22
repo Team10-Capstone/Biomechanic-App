@@ -4498,7 +4498,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 485260608}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2010256514}
+        m_TargetAssemblyTypeName: FileLoader, Assembly-CSharp
+        m_MethodName: DeleteFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &485260608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5284,19 +5296,19 @@ MonoBehaviour:
       Radius: 252
       Height: 0
     Bottom:
-      Radius: 2.5
+      Radius: 2
       Height: -252
     SplineCurvature: 0.5
   RecenteringTarget: 3
   HorizontalAxis:
     Value: 0
-    Center: 0
+    Center: -0
     Range: {x: -180, y: 180}
     Wrap: 1
     Recentering:
-      Enabled: 0
-      Wait: 1
-      Time: 2
+      Enabled: 1
+      Wait: 0
+      Time: 0.3
     Restrictions: 0
   VerticalAxis:
     Value: 17.5
@@ -5304,9 +5316,9 @@ MonoBehaviour:
     Range: {x: -10, y: 45}
     Wrap: 0
     Recentering:
-      Enabled: 0
-      Wait: 1
-      Time: 2
+      Enabled: 1
+      Wait: 0
+      Time: 0.3
     Restrictions: 0
   RadialAxis:
     Value: 1
@@ -5345,6 +5357,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cineCam: {fileID: 583912198}
   cam: {fileID: 583912201}
+  orbitalFollow: {fileID: 583912205}
+  horizontalSpeed: 140
+  verticalSpeed: 40
+  smoothTime: 0.1
+  decelerationTime: 0.03
 --- !u!114 &583912208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7368,6 +7385,7 @@ GameObject:
   - component: {fileID: 1058604094}
   - component: {fileID: 1058604096}
   - component: {fileID: 1058604097}
+  - component: {fileID: 1058604098}
   m_Layer: 5
   m_Name: DummyPanel(Input Control)
   m_TagString: Untagged
@@ -7619,6 +7637,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 1869966116}
+--- !u!114 &1058604098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058604088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1477dc76444d834587a9198a10b3213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonController: {fileID: 2010256499}
+  freeLookCam: {fileID: 583912201}
 --- !u!1 &1068257359
 GameObject:
   m_ObjectHideFlags: 0
@@ -12872,7 +12904,7 @@ MonoBehaviour:
     DefaultMode: 2
   DefaultBlend:
     Style: 3
-    Time: 0.55
+    Time: 0.42
     CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -16059,6 +16091,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2010256512}
+        m_TargetAssemblyTypeName: ResetCamera, Assembly-CSharp
+        m_MethodName: HardResetCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   PostPushAction:
     m_PersistentCalls:
       m_Calls: []
@@ -16135,18 +16179,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1771782485}
           m_ObjectArgumentAssemblyTypeName: Page, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2010256512}
-        m_TargetAssemblyTypeName: ResetCamera, Assembly-CSharp
-        m_MethodName: ResetCameraPosition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

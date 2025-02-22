@@ -51,7 +51,7 @@ public class FileManager : MonoBehaviour
         });
     }
 
-    private void LoadSelectedFolderFiles(string mainPath)
+    public void LoadSelectedFolderFiles(string mainPath)
     {
         DirectoryInfo dir = new DirectoryInfo(mainPath);
         FileInfo[] files = dir.GetFiles("*.csv");
@@ -85,9 +85,11 @@ public class FileManager : MonoBehaviour
                 buttonComponent.onClick.AddListener(resetcamera.ResetCameraPosition);
                 buttonComponent.onClick.AddListener(disableFocus.DisableFocusMode);
                 buttonComponent.onClick.AddListener(disableFocus.TurnOffSectionToggle);
-                buttonComponent.onClick.AddListener(() => fileLoader.LoadFile(mainPath, file.Name, file.FullName));
+                buttonComponent.onClick.AddListener(() => fileLoader.LoadFile(mainPath, file.Name, file.FullName, fileButton));
                 buttonComponent.onClick.AddListener(fileLoader.PauseFile);
             }
         }
     }
+
+
 }

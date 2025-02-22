@@ -9,8 +9,22 @@ public class ResetCamera : MonoBehaviour
 
     public void ResetCameraPosition()
     {
-        CameraSet.HorizontalAxis.Value = 0f;
+        CameraSet.HorizontalAxis.Recentering.Enabled = true;
+        CameraSet.VerticalAxis.Recentering.Enabled = true;
+
+    }
+
+    public void HardResetCamera()
+    {
+        CameraSet.HorizontalAxis.Value = 0;
         CameraSet.VerticalAxis.Value = 17.5f;
 
+    }
+
+
+    public void StopRecentering()
+    {
+        CameraSet.HorizontalAxis.Recentering.Enabled = false;
+        CameraSet.VerticalAxis.Recentering.Enabled = false;
     }
 }

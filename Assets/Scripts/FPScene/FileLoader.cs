@@ -15,10 +15,12 @@ public class FileLoader : MonoBehaviour
     [SerializeField] private TMP_Text fileName;
     [SerializeField] private Toggle playToggle;
 
+    private GameObject fileButton;
     private float updateIntervalSpeed = 100f;
     private float progress = 0f;
     private float updateInterval = 1f/100f;
-
+    private string fullFileName = "";
+    private string folderPath = "";
     private int rowCount;
     void Update()
     {
@@ -47,11 +49,11 @@ public class FileLoader : MonoBehaviour
             PauseFile();
         }
     }
-    public void LoadFile(string mainPath, string fileToOpen, string fileFullname)
+    public void LoadFile(string mainPath, string fileToOpen, string fileFullname, GameObject filebutton)
     {
-        //DirectoryInfo dir = new DirectoryInfo(mainPath);
-
-
+        folderPath = mainPath;
+        fullFileName = fileFullname;
+        fileButton = filebutton;
         fileName.text = fileToOpen;
         rowCount = File.ReadAllLines(fileFullname).Length;
 
@@ -120,5 +122,25 @@ public class FileLoader : MonoBehaviour
     public void GoForward()
     {
         progressBar.value += 25f;
+    }
+
+    public void DeleteFile()
+    {
+        string filePath = fullFileName;
+        if (fullFileName != "" && File.Exists(filePath))
+        {
+            File.Delete(filePath);
+            GameObject buttonControllerObject = GameObject.Find("ButtonController");
+            FileManager files = buttonControllerObject.GetComponent<FileManager>();
+            Destroy(fileButton);
+            fileName.text = "";
+            files.LoadSelectedFolderFiles(folderPath);
+            rowCount = 0;
+            Debug.Log("File deleted successfully: " + filePath);
+        }
+        else
+        {
+            Debug.LogWarning("File not found: " + filePath);
+        }
     }
 }

@@ -13,7 +13,7 @@ public class GoToPlayBackEnvironment : MonoBehaviour
        var dollySpeed = splineDolly.AutomaticDolly.Method as SplineAutoDolly.FixedSpeed;
        //var dollySpeed2 = splineDolly2.AutomaticDolly.Method as SplineAutoDolly.FixedSpeed;
 
-        dollySpeed.Speed = 3.0f;
+        dollySpeed.Speed = 3f;
         //dollySpeed2.Speed = 3.0f;
     }
 
@@ -22,7 +22,7 @@ public class GoToPlayBackEnvironment : MonoBehaviour
         var dollySpeed = splineDolly.AutomaticDolly.Method as SplineAutoDolly.FixedSpeed;
         //var dollySpeed2 = splineDolly2.AutomaticDolly.Method as SplineAutoDolly.FixedSpeed;
 
-        dollySpeed.Speed = -3.0f;
+        dollySpeed.Speed = -2.4f;
         //dollySpeed2.Speed = -3.0f;
     }
 }

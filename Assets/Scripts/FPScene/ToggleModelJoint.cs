@@ -190,7 +190,7 @@ public class ToggleModelJoint : MonoBehaviour
                     toggles[i].isOn = false;
                 }
             }
-            startCentering(new Vector3(600, 46.66f, 40));
+            startCentering(new Vector3(600, 23.333f, 40));
 
         }
     }
